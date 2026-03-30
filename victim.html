@@ -14,14 +14,21 @@
               //  if(event){
   
             //   }
-             if(event.origin!=="https://trust.onrender.com"){
+            /* if(event.origin!=="https://trust.onrender.com"){
                 return;
              }
              else{
              document.getElementById("output").innerHTML =
                     "Name: " + event.data.name;
-              }
+              }*/
                 
+            if(!event.origin.includes("vercel.app")){
+                return
+            }
+            else{
+                 document.getElementById("output").innerHTML =
+                    "Name: " + event.data.name;
+            }
             
             })
             
