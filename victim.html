@@ -22,7 +22,7 @@
                     "Name: " + event.data.name;
               }*/
                 
-            if(!event.origin.includes("vercel.app")){
+            /*if(!event.origin.includes("vercel.app")){
                 return
             }
             else{
@@ -30,8 +30,15 @@
                     "Name: " + event.data.name;
             }
             
-            })
-            
+            })*/
+
+            if(!/^https:\/\/.*vercel.\app$/.test(event.origin)){
+                return;
+            }
+            else {
+                document.getElementById("output").innerHTML=event.data.name
+            }
+        })
         </script>
     </body>
     </html>
