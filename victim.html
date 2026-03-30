@@ -11,9 +11,11 @@
         <script>
             window.addEventListener("message" , function(event){
                 console.log("Recieved Message",event.data)
-
-              if(event){
-document.getElementById("output").innerHTML =
+              if(event.origin!=="https://trust.onrender.com"){
+                return;
+              }
+              else{
+                document.getElementById("output").innerHTML =
                     "Name: " + event.data.name;
               }
                 
