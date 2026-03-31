@@ -11,9 +11,10 @@
         <script>
             window.addEventListener("message" , function(event){
                 console.log("Recieved Message",event.data)
-              //  if(event){
-  
-            //   }
+                if(event){
+  document.getElementById("output").innerHTML =
+                    "Name: " + event.data.name;
+             }
             /* if(event.origin!=="https://trust.onrender.com"){
                 return;
              }
@@ -32,12 +33,12 @@
             
             })*/
 
-            if(!/^https:\/\/.*vercel.\app$/.test(event.origin)){
+           /* if(!/^https:\/\/.*vercel.\app$/.test(event.origin)){
                 return;
             }
             else {
                 document.getElementById("output").innerHTML=event.data.name
-            }
+            }*/
         })
         </script>
     </body>
